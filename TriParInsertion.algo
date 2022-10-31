@@ -1,0 +1,46 @@
+PROCEDURE Tri_par_Insertion( var arr : ARRAY_OF INTEGER)
+
+VAR
+    i,j,carte : INTEGER := 0;
+BEGIN
+    
+    FOR i FROM 0 TO arr.length -1 STEP step  DO
+        
+        carte := arr[i];
+
+        j := i;
+
+        WHILE (j > 0 AND arr[j-1] > carte) DO
+            
+            arr[j] := arr[j-1];
+
+            j := j-1
+
+        END_WHILE
+
+        arr[j] := carte;
+
+    END_FOR
+
+END
+
+
+ALGORITHM triInsertion
+
+VAR
+    tab : ARRAY_OF INTEGER[10];
+    val: INTEGER;
+
+BEGIN
+    
+    Write("Entrer les valeurs du tableau");
+    Read(val);
+
+    IF (tab.length > 0) THEN
+
+        Tri_par_Insertion(tab)
+
+    END_IF
+
+    Read(tab);
+END
